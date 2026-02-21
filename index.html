@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Easiest Demons - Geometry Dash</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 40px;
+    text-shadow: 0 0 20px #00ffff;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00ffff; }
+    to { text-shadow: 0 0 30px #00ffff, 0 0 50px #00ffff; }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(0,0,0,0.6);
+    border: 3px solid #00ffff;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    transition: 0.4s;
+    animation: float 4s ease-in-out infinite;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #00ffff;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.rank {
+    font-size: 2rem;
+    color: #00ffff;
+}
+
+.level {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.stats {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    margin: 5px 0 2px 0;
+    opacity: 0.8;
+}
+
+.stat-bar {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    height: 12px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: #00ffff;
+    border-radius: 10px;
+    width: 0%;
+    animation: fill 1.5s forwards;
+}
+
+@keyframes fill {
+    from { width: 0%; }
+    to { width: var(--fill); }
+}
+
+.footer {
+    margin-top: 80px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 The 3 Easiest Demons in Geometry Dash 🔥</h1>
+
+<!-- Sub-footer under the title -->
+<p style="font-size:1.5rem; color:#00ffff; text-shadow:0 0 15px #00ffff; margin-top:5px; font-weight:bold;">
+My Personal Top 3 List
+</p>
+
+<p style="font-size:1rem; opacity:0.7; margin-top:5px; text-shadow: 0 0 5px #00ffff;">
+This is only my opinion and I know that some people might disagree with this list, but these are the 3 easiest demons in my opinion. If you have any suggestions for other demons that should be on this list, please let me know in the comments!
+</p>
+
+<div class="container">
+
+    <div class="card">
+        <div class="rank">#1</div>
+        <div class="level">The Lightning Road</div>
+        <div class="stats">
+            <div class="stat-label">Enjoyment: 85/100</div>
+            <div class="stat-bar">
+                <div class="stat-fill" style="--fill:85%"></div>
+            </div>
+            <div class="stat-label">Difficulty: 5/100</div>
+            <div class="stat-bar">
+                <div class="stat-fill" style="--fill:30%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="rank">#2</div>
+        <div class="level">The Nightmare</div>
+        <div class="stats">
+            <div class="stat-label">Enjoyment: 70/100</div>
+            <div class="stat-bar">
+                <div class="stat-fill" style="--fill:70%"></div>
+            </div>
+            <div class="stat-label">Difficulty: 15/100</div>
+            <div class="stat-bar">
+                <div class="stat-fill" style="--fill:40%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="rank">#3</div>
+        <div class="level">Platinum Adventure</div>
+        <div class="stats">
+            <div class="stat-label">Enjoyment: 35/100</div>
+            <div class="stat-bar">
+                <div class="stat-fill" style="--fill:35%"></div>
+            </div>
+            <div class="stat-label">Difficulty: 25/100</div>
+            <div class="stat-bar">
+                <div class="stat-fill" style="--fill:20%"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- COMMENT SECTION START -->
+<div class="comment-section" style="margin-top:50px; text-align:left; max-width:700px; margin-left:auto; margin-right:auto;">
+    <h2 style="text-align:center; color:#00ffff; text-shadow:0 0 10px #00ffff;">💬 Comments</h2>
+    <p style="text-align:center; color:#00ffff; opacity:0.8; margin-top:5px;">Give me Ideas!</p>
+    
+    <div id="comments-container" style="margin-top:20px;"></div>
+    
+    <textarea id="comment-input" placeholder="Write a comment..." 
+        style="width:100%; padding:10px; border-radius:10px; border:2px solid #00ffff; background:rgba(0,0,0,0.6); color:white; resize:none; height:80px;"></textarea>
+    
+    <button onclick="addComment()" 
+        style="margin-top:10px; padding:10px 20px; border:none; border-radius:10px; background:#00ffff; color:black; font-weight:bold; cursor:pointer; transition:0.3s;">
+        Post Comment
+    </button>
+
+    <!-- Footer under comment box -->
+    <p style="margin-top:10px; font-size:0.8rem; opacity:0.7; text-align:center;">
+        🚫 No spam or inappropriate comments
+    </p>
+</div>
+
+<script>
+// Load comments from localStorage when page loads
+window.onload = function() {
+    const storedComments = JSON.parse(localStorage.getItem("gdComments")) || [];
+    const container = document.getElementById('comments-container');
+    storedComments.forEach(comment => {
+        addCommentToDOM(comment, container);
+    });
+}
+
+function addComment() {
+    const input = document.getElementById('comment-input');
+    const comment = input.value.trim();
+    if(comment === '') return;
+
+    // Save comment to localStorage
+    let storedComments = JSON.parse(localStorage.getItem("gdComments")) || [];
+    storedComments.push(comment);
+    localStorage.setItem("gdComments", JSON.stringify(storedComments));
+
+    // Add comment to DOM
+    const container = document.getElementById('comments-container');
+    addCommentToDOM(comment, container);
+
+    input.value = '';
+}
+
+function addCommentToDOM(comment, container) {
+    const commentDiv = document.createElement('div');
+    commentDiv.textContent = comment;
+    commentDiv.style.background = "rgba(0,255,255,0.2)";
+    commentDiv.style.padding = "10px";
+    commentDiv.style.borderRadius = "10px";
+    commentDiv.style.marginBottom = "10px";
+    
+    container.prepend(commentDiv); // new comments appear on top
+}
+</script>
+<!-- COMMENT SECTION END -->
+<div class="footer">
+Made by Samyyxx 🚀
+</div>
+
+</body>
+</html>
